@@ -1,10 +1,17 @@
 # scrape_paper
 a python code to do a web scraping academic papers and data from various sites.
+ 
 
+## about Directory & Files
 
-## about Directory
+- `sample` : store sample python code in .ipynb format.  
+- `*.py` : Any python file in the root directory is almost identical to the cloud's running code.
 
-- `sample` : store sample python code in .ipynb format.
+### note: 
+
+`*.py ` in the root directory is not 100% the same as the cloud's running code because DB-related codes is hidden for security.  
+If you will implement another web scraping code, please follow `scrapers_journal_aer.py` structue.   
+It should have DOI as a variable, and the return type should be dict.
 
 
 ## Potential Bugs
