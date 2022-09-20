@@ -1,5 +1,5 @@
 # paper_scraper
-a python code to do a web scraping academic papers and data from various sites.
+a Python code to do a web scraping of academic papers and data from various sites.
  
 
 ## about Directory & Files
