@@ -4,6 +4,9 @@ import requests
 import re
 
 
+'''
+This is a bunch of functions to do a web scraping in the AER(American Economic Review) website.
+'''
 
 base_url_aer = "https://www.aeaweb.org"
 url_aer_issues = base_url_aer + "/journals/aer/issues"
