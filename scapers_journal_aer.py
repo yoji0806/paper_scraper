@@ -104,7 +104,7 @@ def scrape_aer_info_in_paper(url_aer_paper):
                 }
             ],
             'abstract_str': '(June 2022) - Expanding credit access in developing contexts could help some households while harming others. Microcredit studies show different effects at different quantiles of household profit, including some negative effects; yet these findings also differ across studies. I develop new Bayesian hierarchical models to aggregate the evidence on these distributional effects for mixture-type outcomes such as household profit. Applying them to microcredit, I find a precise zero effect from the fifth to seventy-fifth quantiles, and uncertain yet large effects on the upper tails, particularly for households with business experience. These quantile estimates are more reliable than averages because the data are fat tailed.',
-            'categorycode_lst': [
+            'category_code_lst': [
                 'G21',
                 'G51',
                 'L25',
@@ -182,7 +182,7 @@ def scrape_aer_info_in_paper(url_aer_paper):
     paper_info['title_str'] = str_title
     paper_info['author_lst'] = lst_dict_author
     paper_info['abstract_str'] = str_abstract
-    paper_info['categorycode_lst'] = lst_jel_categorycode
+    paper_info['category_code_lst'] = lst_jel_categorycode
     
     #TODO
     #paper_info['category'] = xxx
