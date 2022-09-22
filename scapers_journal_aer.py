@@ -49,9 +49,9 @@ def scrape_aer_issues():
     dic_issue_link_title = {}
     
     soup_obj = soup(url_aer_issues)
-    lst_issues = soup_obj.find_all('a', href=re.compile('/issues/'))
+    list_issues = soup_obj.find_all('a', href=re.compile('/issues/'))
 
-    for issue in lst_issues:
+    for issue in list_issues:
         link = base_url_aer + issue['href']
         title = issue.text
 
@@ -75,9 +75,9 @@ def scrape_aer_papers_in_issue(url_aer_issue):
     dic_paper_link_title = {}
     
     soup_obj = soup(url_aer_issue)
-    lst_papers = soup_obj.find_all('a', href=re.compile('/articles?'))
+    list_papers = soup_obj.find_all('a', href=re.compile('/articles?'))
     
-    for paper in lst_papers:
+    for paper in list_papers:
         link = base_url_aer + paper['href']
         title = paper.text
 
@@ -97,14 +97,14 @@ def scrape_aer_info_in_paper(url_aer_paper):
     
         {
             'title_str': 'Aggregating Distributional Treatment Effects: A Bayesian Hierarchical Analysis of the Microcredit Literature',
-            'author_lst': [
+            'author_list': [
                 {
                     'name': 'Meager, Rachael',
                     'institution': 'London School of Economics and Political Science'
                 }
             ],
             'abstract_str': '(June 2022) - Expanding credit access in developing contexts could help some households while harming others. Microcredit studies show different effects at different quantiles of household profit, including some negative effects; yet these findings also differ across studies. I develop new Bayesian hierarchical models to aggregate the evidence on these distributional effects for mixture-type outcomes such as household profit. Applying them to microcredit, I find a precise zero effect from the fifth to seventy-fifth quantiles, and uncertain yet large effects on the upper tails, particularly for households with business experience. These quantile estimates are more reliable than averages because the data are fat tailed.',
-            'categorycode_lst': [
+            'category_code_list': [
                 'G21',
                 'G51',
                 'L25',
@@ -122,20 +122,20 @@ def scrape_aer_info_in_paper(url_aer_paper):
     '''
     
     soup_obj = soup(url_aer_paper)
-    lst_metadata = soup_obj.find_all('meta')
+    list_metadata = soup_obj.find_all('meta')
 
     paper_info = {}
-    lst_dict_author = []
+    list_dict_author = []
     str_title = ''
     str_abstract = ''
 
     #TODO: get 'Additional Material'information.
-    lst_additional_materials = []
+    list_additional_materials = []
     
     #TODO: get category text information.
-    lst_dict_category = []
+    list_dict_category = []
     
-    lst_jel_categorycode = []
+    list_jel_categorycode = []
 
 
     dict_author = {
@@ -143,7 +143,7 @@ def scrape_aer_info_in_paper(url_aer_paper):
             'institution': ''
         }
 
-    for metadata in lst_metadata:
+    for metadata in list_metadata:
         name_metadata = metadata.get('name')
 
         if(name_metadata == 'citation_author'):    
@@ -157,7 +157,7 @@ def scrape_aer_info_in_paper(url_aer_paper):
             dict_author['institution'] = author_institution
 
             copy_dict_author = dict_author.copy()        
-            lst_dict_author.append(copy_dict_author)
+            list_dict_author.append(copy_dict_author)
             continue
     
     
@@ -175,14 +175,14 @@ def scrape_aer_info_in_paper(url_aer_paper):
 
     for item in soup_class_code:
         category_code = item.contents[0]
-        lst_jel_categorycode.append(category_code)
+        list_jel_categorycode.append(category_code)
 
     
     paper_info['url'] = url_aer_paper
     paper_info['title_str'] = str_title
-    paper_info['author_lst'] = lst_dict_author
+    paper_info['author_list'] = list_dict_author
     paper_info['abstract_str'] = str_abstract
-    paper_info['categorycode_lst'] = lst_jel_categorycode
+    paper_info['category_code_list'] = list_jel_categorycode
     
     #TODO
     #paper_info['category'] = xxx
