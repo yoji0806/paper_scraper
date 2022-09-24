@@ -31,6 +31,8 @@ Please follow Google Style Python Docstrings.
 
 
 # Future Work （no particular order）
+- collect lectures of Economics.
+- make & open a spreadsheet that everyone can put materials on. -> move this spreadsheet to DB in the cloud.
 - add other journals as resources.
 - collect non-paper information in economics like, open-data, experimental data, about a professor...etc
 - Reccomend feature.
