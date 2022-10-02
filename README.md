@@ -1,7 +1,7 @@
 
 This is a child project of [Paper in Economics](https://github.com/yoji0806/paper_in_economics).
 
-# paper_scraper
+# paper scraper
 A Python code to do a web scraping of academic papers and data from various sites.
  
 
