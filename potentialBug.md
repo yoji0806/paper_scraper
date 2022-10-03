@@ -6,5 +6,5 @@ And keep these in mind when you develop new codes.
 
 ## No.1 dealing with DOI(Digital Object Identifier)
 
-We replace the slash mark(/) with an underscore(_) in DOI because of DB issues.   
+We replace the slash mark(/) and the dot mark(.) with an underscore(_) in DOI because of DB issues.   
 This could be a bug when a new journal's DOI name contains a slash mark(/).
